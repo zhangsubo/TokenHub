@@ -10,12 +10,12 @@ export const languageOptions: Array<{ value: AppLanguage; label: string; nativeL
   { value: "ja", label: "Japanese", nativeLabel: "日本語" },
 ];
 
-export let activeLanguage: AppLanguage = "en";
+export let activeLanguage: AppLanguage = "zh-CN";
 
 export function readSavedLanguage(): AppLanguage {
-  if (typeof window === "undefined") return "en";
+  if (typeof window === "undefined") return "zh-CN";
   const saved = window.localStorage.getItem(languageStorageKey);
-  return saved === "en" || saved === "ja" || saved === "zh-CN" ? saved : "en";
+  return saved === "en" || saved === "ja" || saved === "zh-CN" ? saved : "zh-CN";
 }
 
 export function setActiveLanguage(language: AppLanguage) {
